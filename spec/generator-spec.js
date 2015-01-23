@@ -11,9 +11,9 @@ describe('Scrambled-Number-Gerator', function() {
   });
 
   it ('should have n numbers specified in scrambled order', function() {
-    var result = sng.randomNum(10);
+    var result = sng.randomNum(100);
 
     result.should.be.an('array');
-    result.should.have.length(10);
+    result.should.have.length(100);
   });
 });
