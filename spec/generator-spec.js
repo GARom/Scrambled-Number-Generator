@@ -1,19 +1,19 @@
 var sng = require('../generator.js');
-var chai = require('chai');
-var expect = chai.expect;
-var should = chai.should();
 
-describe('Scrambled-Number-Gerator', function() {
-  it('should be defined as a function', function() {
-    expect(sng.randomNum).to.be.a('function');
-    expect(sng.randomNum).to.be.instanceof(Function);
-
+describe("Scrambled Number Generator", function() {
+  it("should be defined as a function", function() {
+    expect( sng.randomNum ).toBeDefined();
   });
 
-  it ('should have n numbers specified in scrambled order', function() {
-    var result = sng.randomNum(100);
-
-    result.should.be.an('array');
-    result.should.have.length(100);
+  it("should have 1000 numbers", function() {
+    expect( sng.randomNum(1000).length).toBe(1000);   
   });
-});
+
+  it("should have n numbers specified in scrambled order", function() {
+    var firstTest = sng.randomNum(1000);
+    var secondTest = sng.randomNum(1000);
+    expect(firstTest).not.toEqual(secondTest);
+  });
+
+
+})
